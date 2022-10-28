@@ -19,7 +19,7 @@ const chooseRecipe = function(bakeryA, bakeryB, recipes) {
   }
   for (let recipe of recipes) {
     if (ingredientCheck(bakeryA, recipe.ingredients) && ingredientCheck(bakeryB, recipe.ingredients)) {
-      return recipe.name;
+      return recipe.name;pl
     }
 
   }
@@ -33,7 +33,7 @@ let recipes = [
   {
     name: "Coconut Sponge Cake",
     ingredients: ["coconut", "cake base"],
-  },
+  },com
   {
     name: "Persian Cheesecake",
     ingredients: ["saffron", "cream cheese"],
