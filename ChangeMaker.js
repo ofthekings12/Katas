@@ -17,35 +17,39 @@ Nickel (5¢)
 Penny (1¢)*/
 
 const calculateChange = function(total, cash) {
-  let pennyChange = cash - total;
-  let change = {};
-
-  while (pennyChange > 0) {
-    if (pennyChange >= 2000) {
-      change.twentyDollar = change.tenDollar + 1 || 1;
-      pennyChange -= 2000;
-    } else if (pennyChange >= 1000) {
-      change.tenDollar = change.fiveDollar + 1 || 1;
-      pennyChange -= 1000;
-    } else if (pennyChange >= 500) {
-      change.fiveDollar = change.twoDollar + 1 || 1;
-      pennyChange -= 500;
-    } else if (pennyChange >= 200) {
-      change.twoDollar = change.oneDollar + 1 || 1;
-      pennyChange -= 100;
-    } else if (pennyChange >= 25) {
-      change.quarter = change.dime + 1 || 1;
-      pennyChange -= 10;
-    } else if (pennyChange >= 10) {
-      change.dime = change.nickel + 1 || 1;
-      pennyChange -= 5;
+  const coinOwed = {};
+  let moneyOwed = (cash - total);
+  while (moneyOwed > 0) {
+    if (moneyOwed >= 2000) {
+      coinOwed.twentyDollars = coinOwed.twentyDollars + 1 || 1;
+      moneyOwed -= 2000;
+    } else if (moneyOwed >= 1000) {
+      coinOwed.tenDollars = coinOwed.tenDollars + 1 || 1; 
+      moneyOwed -= 1000;
+    } else if (moneyOwed >= 500) {
+      coinOwed.fiveDollars = coinOwed.fiveDollars + 1 || 1;
+      moneyOwed -= 500;
+    } else if (moneyOwed >= 200) {
+      coinOwed.twoDollars = coinOwed.twoDollars + 1 || 1;
+      moneyOwed -= 200;
+    } else if (moneyOwed >= 100) {
+      coinOwed.oneDollar = coinOwed.oneDollar + 1 || 1;
+      moneyOwed -= 100;
+    } else if (moneyOwed >= 25) {
+      coinOwed.quarter = coinOwed.quarter + 1 || 1;
+      moneyOwed -= 25;
+    } else if (moneyOwed >= 10) {
+      coinOwed.dime = coinOwed.dime + 1 || 1;
+      moneyOwed -= 10;
+    } else if (moneyOwed >= 5) {
+      coinOwed.nickel = coinOwed.nickel + 1 || 1;
+      moneyOwed -= 5;
     } else {
-      change.penny = change.penny + 1 || 1;
-      pennyChange -= 1;
+      coinOwed.penny = coinOwed.penny + 1 || 1; 
+      moneyOwed -= 1; 
     }
   }
-  return change;
-
+  return coinOwed;
 };
 
 console.log(calculateChange(1787, 2000));
