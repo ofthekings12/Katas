@@ -9,7 +9,9 @@ Create a function named organizeInstructors that will receive an array of instru
 */
 
 const organizeInstructors = function(instructors) {
-
+  for (let instructor of instructors) {
+    
+  }
 
 };
 
