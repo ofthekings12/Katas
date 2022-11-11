@@ -21,9 +21,9 @@ const makeCase = function(input, caseStyle) {
 
   } else if (caseStyle === "snake") {
     let wordArr = input.split(' ');
-    let snakeArr = wordArr.join('_');
+    let newStr = wordArr.join('_');
 
-    return snakeArr;
+    return newStr;
 
   }
   return newStr;
