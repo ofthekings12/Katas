@@ -17,6 +17,10 @@ const makeCase = function(input, caseStyle) {
   }
   return newStr;
 
+  if (caseStyle === "pascal") {
+    
+  }
+
 
 }
 
