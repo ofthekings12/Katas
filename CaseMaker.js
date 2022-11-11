@@ -4,7 +4,6 @@ const camelCase = function(input) {
   let newStr = "";
   if (input) {
     let wordArr = input.split(' ');
-    console.log('here', wordArr)
     for (let i = 0; i < wordArr.length; i++) {
       if (i > 0) {
         newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
