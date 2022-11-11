@@ -12,14 +12,16 @@ const makeCase = function(input, caseStyle) {
         newStr += wordArr[i]
       }
     }
-  } else {
+  } else if (caseStyle === "pascal") {
+    let wordArr = input.split(' ');
+    for (let i = 0; i < wordArr.length; i++) {
+      newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
+    }
     return newStr;
   }
   return newStr;
 
-  if (caseStyle === "pascal") {
-    
-  }
+
 
 
 }
