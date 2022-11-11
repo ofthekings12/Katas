@@ -18,6 +18,13 @@ const makeCase = function(input, caseStyle) {
       newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
     }
     return newStr;
+
+  } else if (caseStyle === "snake") {
+    let wordArr = input.split(' ');
+    let snakeArr = wordArr.join('_');
+
+    return snakeArr;
+
   }
   return newStr;
 
