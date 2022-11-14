@@ -29,7 +29,16 @@ const makeCase = function(input, caseStyle) {
     let wordArr = input.split(' ') ;
     let newStr = wordArr.join('-');
     return newStr;
+
+  } else if (caseStyle === 'title') {
+    let wordArr = input.split(' ');
+    for (let i = 0; i < wordArr.length; i++) {
+      newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1) + ' ';
+    }
+  
+    return newStr;
   }
+
   return newStr;
 
 
