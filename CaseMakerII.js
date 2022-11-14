@@ -35,8 +35,10 @@ const makeCase = function(input, caseStyle) {
     for (let i = 0; i < wordArr.length; i++) {
       newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1) + ' ';
     }
-  
     return newStr;
+  } else if (caseStyle === 'vowel') {
+    let wordArr = input.split(' ');
+    console.log('here', wordArr)
   }
 
   return newStr;
