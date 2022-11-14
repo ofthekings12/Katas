@@ -25,6 +25,10 @@ const makeCase = function(input, caseStyle) {
 
     return newStr;
 
+  } else if (caseStyle === "kebab") {
+    let wordArr = input.split(' ') ;
+    let newStr = wordArr.join('-');
+    return newStr;
   }
   return newStr;
 
