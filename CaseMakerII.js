@@ -3,7 +3,7 @@
 const makeCase = function (input, caseStyle) {
   let newStr = "";
 
-  if (caseStyle === "camel") {
+  if (caseStyle === "camel") { // Camel Case Style
     let wordArr = input.split(" ");
     for (let i = 0; i < wordArr.length; i++) {
       if (i > 0) {
@@ -12,28 +12,35 @@ const makeCase = function (input, caseStyle) {
         newStr += wordArr[i];
       }
     }
-  } else if (caseStyle === "pascal") {
+
+  } else if (caseStyle === "pascal") { // Pascal Case Style
     let wordArr = input.split(" ");
     for (let i = 0; i < wordArr.length; i++) {
       newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
     }
     return newStr;
-  } else if (caseStyle === "snake") {
+
+  } else if (caseStyle === "snake") { // "Snake Case Style"
     let wordArr = input.split(" ");
     let newStr = wordArr.join("_");
 
     return newStr;
-  } else if (caseStyle === "kebab") {
+
+  } else if (caseStyle === "kebab") { // Kebab Case Style
     let wordArr = input.split(" ");
     let newStr = wordArr.join("-");
     return newStr;
-  } else if (caseStyle === "title") {
+
+
+  } else if (caseStyle === "title") { // Title Case Style
     let wordArr = input.split(" ");
     for (let i = 0; i < wordArr.length; i++) {
       newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1) + " ";
     }
     return newStr;
-  } else if (caseStyle === "vowel") {
+
+
+  } else if (caseStyle === "vowel") { // Vowel Case Style
     for (let i = 0; i < input.length; i++) {
       for (let j = 0; j < input[i].length; j++) {
         if (
@@ -50,8 +57,9 @@ const makeCase = function (input, caseStyle) {
         }
       }
     }
+    return newStr;
+
   }
-  console.log('here', newStr)
 };
 
 
