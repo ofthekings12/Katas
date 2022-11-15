@@ -1,52 +1,59 @@
 /* Create a function named makeCase that will receive an input string and one or more casing options. Return a new string that is formatted based on casing options */
 
-const makeCase = function(input, caseStyle) {
+const makeCase = function (input, caseStyle) {
   let newStr = "";
 
   if (caseStyle === "camel") {
-    let wordArr = input.split(' ');
+    let wordArr = input.split(" ");
     for (let i = 0; i < wordArr.length; i++) {
       if (i > 0) {
         newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
       } else {
-        newStr += wordArr[i]
+        newStr += wordArr[i];
       }
     }
   } else if (caseStyle === "pascal") {
-    let wordArr = input.split(' ');
+    let wordArr = input.split(" ");
     for (let i = 0; i < wordArr.length; i++) {
       newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
     }
     return newStr;
-
   } else if (caseStyle === "snake") {
-    let wordArr = input.split(' ');
-    let newStr = wordArr.join('_');
+    let wordArr = input.split(" ");
+    let newStr = wordArr.join("_");
 
     return newStr;
-
   } else if (caseStyle === "kebab") {
-    let wordArr = input.split(' ') ;
-    let newStr = wordArr.join('-');
+    let wordArr = input.split(" ");
+    let newStr = wordArr.join("-");
     return newStr;
-
-  } else if (caseStyle === 'title') {
-    let wordArr = input.split(' ');
+  } else if (caseStyle === "title") {
+    let wordArr = input.split(" ");
     for (let i = 0; i < wordArr.length; i++) {
-      newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1) + ' ';
+      newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1) + " ";
     }
     return newStr;
-  } else if (caseStyle === 'vowel') {
-    let wordArr = input.split(' ');
-    console.log('here', wordArr)
+  } else if (caseStyle === "vowel") {
+    for (let i = 0; i < input.length; i++) {
+      for (let j = 0; j < input[i].length; j++) {
+        if (
+          input[i] === "e" ||
+          input[i] === "e" ||
+          input[i] === "a" ||
+          input[i] === "i" ||
+          input[i] === "o" ||
+          input[i] === "i"
+        ) {
+          newStr += input[i].toUpperCase();
+        } else {
+          newStr += input[i].toLowerCase();
+        }
+      }
+    }
   }
+  console.log('here', newStr)
+};
 
-  return newStr;
-
-
-
-
-}
 
 console.log(makeCase("this is a string", "camel"));
 console.log(makeCase("this is a string", "pascal"));
