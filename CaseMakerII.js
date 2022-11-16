@@ -44,12 +44,12 @@ const makeCase = function (input, caseStyle) {
     for (let i = 0; i < input.length; i++) {
       for (let j = 0; j < input[i].length; j++) {
         if (
-          input[i] === "e" ||
-          input[i] === "e" ||
           input[i] === "a" ||
+          input[i] === "e" ||
           input[i] === "i" ||
           input[i] === "o" ||
-          input[i] === "i"
+          input[i] === "u"
+          
         ) {
           newStr += input[i].toUpperCase();
         } else {
@@ -59,6 +59,23 @@ const makeCase = function (input, caseStyle) {
     }
     return newStr;
 
+  } else if (caseStyle === "consonant") { // Consonant Case Style
+    for (let i = 0; i < input.length; i++) {
+      for (let j = 0; j < input[i].length; j++) {
+        if (
+          !input[i] === "a" ||
+          !input[i] === "e" ||
+          !input[i] === "i" ||
+          !input[i] === "o" ||
+          !input[i] === "u"
+        ) {
+          newStr += input[i].toUpperCase();
+        } else {
+          newStr += input[i].toLowerCase();
+        }
+      }
+    }
+    return newStr;
   }
 };
 
