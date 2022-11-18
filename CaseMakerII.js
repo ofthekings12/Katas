@@ -74,7 +74,7 @@ const makeCase = function (input, caseStyle) {
           newStr += input[i].toLowerCase();
         }
       }
-      
+
     }
     return newStr;
   }
@@ -88,7 +88,6 @@ console.log(makeCase("this is a string", "kebab"));
 console.log(makeCase("this is a string", "title"));
 console.log(makeCase("this is a string", "vowel"));
 console.log(makeCase("this is a string", "consonant"));
-console.log(makeCase("this is a string", ["upper", "snake"]));
 
 /* EXPECTED OUTPUT
 
