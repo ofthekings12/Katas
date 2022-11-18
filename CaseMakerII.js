@@ -61,24 +61,22 @@ const makeCase = function (input, caseStyle) {
 
   } else if (caseStyle === "consonant") { // Consonant Case Style
     for (let i = 0; i < input.length; i++) {
-      for (let j = 0; j < input[i].length; j++) {
         if (
-          !input[i] === "a" ||
-          !input[i] === "e" ||
-          !input[i] === "i" ||
-          !input[i] === "o" ||
-          !input[i] === "u"
+          input[i] === "a" ||
+          input[i] === "e" ||
+          input[i] === "i" ||
+          input[i] === "o" ||
+          input[i] === "u"
         ) {
-          newStr += input[i].toUpperCase();
+          newStr += input[i].toLowerCase()
         } else {
-          newStr += input[i].toLowerCase();
+          newStr += input[i].toUpperCase();;
         }
       }
 
     }
     return newStr;
-  }
-};
+  };
 
 
 console.log(makeCase("this is a string", "camel"));
@@ -98,6 +96,5 @@ this-is-a-string
 This Is A String
 thIs Is A strIng
 THiS iS a STRiNG
-THIS_IS_A_STRING
 
 */
