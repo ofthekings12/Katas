@@ -74,6 +74,7 @@ const makeCase = function (input, caseStyle) {
           newStr += input[i].toLowerCase();
         }
       }
+      
     }
     return newStr;
   }
